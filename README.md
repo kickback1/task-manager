@@ -9,7 +9,6 @@ This project was created as part of a learning exercise to master advanced Git c
 - Feature branch development
 - Merge conflict resolution
 - Proper commit message formatting
-- Pull request workflows
 
 ## Features
 
