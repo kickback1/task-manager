@@ -16,7 +16,16 @@ function displayTasks() {
     tasks.forEach(task => {
         const div = document.createElement('div');
         div.className = 'task-item';
-        div.innerHTML = `<span>${task.text}</span>`;
+        div.innerHTML = `
+            <span>${task.text}</span>
+            <button onclick="deleteTask(${task.id})">Delete</button>
+        `;
         list.appendChild(div);
     });
+}
+
+function deleteTask(id) {
+    const index = tasks.findIndex(t => t.id === id);
+    tasks.splice(index, 1);
+    displayTasks();
 }
