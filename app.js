@@ -16,7 +16,16 @@ function displayTasks() {
     tasks.forEach(task => {
         const div = document.createElement('div');
         div.className = 'task-item';
-        div.innerHTML = `<span>${task.text}</span>`;
+        div.innerHTML = `
+            <input type="checkbox" onchange="toggleTask(${task.id})">
+            <span class="${task.done ? 'done' : ''}">${task.text}</span>
+        `;
         list.appendChild(div);
     });
+}
+
+function toggleTask(id) {
+    const task = tasks.find(t => t.id === id);
+    task.done = !task.done;
+    displayTasks();
 }
